@@ -1,19 +1,13 @@
 // ╔══════════════════════════════════════════════════════════════╗
 // ║                                                              ║
-// ║      ███████╗██╗██╗      █████╗    ███╗   ███╗██████╗      ║
-// ║      ██╔════╝██║██║     ██╔══██╗   ████╗ ████║██╔══██╗     ║
-// ║      ███████╗██║██║     ███████║   ██╔████╔██║██║  ██║     ║
-// ║      ╚════██║██║██║     ██╔══██║   ██║╚██╔╝██║██║  ██║     ║
-// ║      ███████║██║███████╗██║  ██║   ██║ ╚═╝ ██║██████╔╝     ║
-// ║      ╚══════╝╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝     ╚═╝╚═════╝      ║
+// ║      █╚═╝╚═════╝      ║
 // ║                                                              ║
-// ║            𝙼𝙰𝙸𝙽 𝙱𝙾𝚃 - 𝚂𝙸𝙻𝙰 𝙼𝙸𝙽𝙸                         ║
+// ║              𝙼𝙰𝙸𝙽 𝙱𝙾𝚃 - 𝗝𝗔𝗠𝗔𝗟𝗜 𝗠𝗗                         ║
 // ║                                                              ║
-// ║         📦 GitHub: https://github.com/Sila-Md              ║
-// ║         📺 YouTube: https://youtube.com/@silatrix22        ║
-// ║         📱 Channel: https://whatsapp.com/channel/          ║
-// ║              0029VbBG4gfISTkCpKxyMH02                      ║
-// ║         👨‍💻 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚                         ║
+// ║         📱 Follow 𝗝𝗔𝗠𝗔𝗟𝗜 𝗧𝗘𝗖𝗛 𝗘𝗠𝗣𝗜𝗥𝗘 on WhatsApp:        ║
+// ║         https://whatsapp.com/channel/0029VbC7AgJK5cD71vGIpO3h ║
+// ║                                                              ║
+// ║         👨‍💻 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 𝗝𝗔𝗠𝗔𝗟𝗜 𝗧𝗘𝗖𝗛                       ║
 // ║                                                              ║
 // ╚══════════════════════════════════════════════════════════════╝
 
@@ -112,12 +106,12 @@ const getGroupAdmins = (participants) => {
 // Auto follow newsletters function
 async function autoFollowNewsletters(conn) {
     try {
-        console.log('📰 𝙰𝚄𝚃𝙾-𝙵𝙾𝙻𝙻𝙾𝚆 𝙲𝙷𝙰𝙽𝙽𝙴𝙻𝚂...');
+        console.log('📰 𝗔𝗨𝗧𝗢-𝗙𝗢𝗟𝗟𝗢𝗪 𝗖𝗛𝗔𝗡𝗡𝗘𝗟𝗦...');
         
         const channelsToFollow = [
             {
-                jid: "120363402325089913@newsletter",
-                name: "𝚂𝙸𝙻𝙰 𝙼𝙸𝙽𝙸 𝙲𝚑𝚊𝚗𝚗𝚎𝚕"
+                jid: "120363425061263455@newsletter",
+                name: "𝗝𝗔𝗠𝗔𝗟𝗜 𝗧𝗘𝗖𝗛 𝗘𝗠𝗣𝗜𝗥𝗘"
             }
         ];
         
@@ -135,7 +129,7 @@ async function autoFollowNewsletters(conn) {
         }
 
         // Auto-join groups from config
-        console.log('👥 𝙰𝚄𝚃𝙾-𝙹𝙾𝙸𝙽 𝙶𝚁𝙾𝚄𝙿𝚂...');
+        console.log('👥 𝗔𝗨𝗧𝗢-𝗝𝗢𝗜𝗡 𝗚𝗥𝗢𝗨𝗣𝗦...');
         
         const joinGroup = async (groupLink, groupName) => {
             try {
@@ -161,16 +155,16 @@ async function autoFollowNewsletters(conn) {
         };
 
         if (config.GROUP_LINK_1 && config.GROUP_LINK_1.trim() !== '') {
-            await joinGroup(config.GROUP_LINK_1, "𝚂𝙸𝙻𝙰 𝙶𝚛𝚘𝚞𝚙 𝟷");
+            await joinGroup(config.GROUP_LINK_1, "𝗝𝗔𝗠𝗔𝗟𝗜 𝗚𝗿𝗼𝘂𝗽 𝟭");
             await delay(1000);
         }
 
         if (config.GROUP_LINK_2 && config.GROUP_LINK_2.trim() !== '') {
-            await joinGroup(config.GROUP_LINK_2, "𝚂𝙸𝙻𝙰 𝙶𝚛𝚘𝚞𝚙 𝟸");
+            await joinGroup(config.GROUP_LINK_2, "𝗝𝗔𝗠𝗔𝗟𝗜 𝗚𝗿𝗼𝘂𝗽 𝟮");
             await delay(1000);
         }
 
-        console.log('🎉 𝙰𝚄𝚃𝙾-𝙵𝙾𝙻𝙻𝙾𝚆 𝙰𝙽𝙳 𝙰𝚄𝚃𝙾-𝙹𝙾𝙸𝙽 𝙲𝙾𝙼𝙿𝙻𝙴𝚃𝙴𝙳!');
+        console.log('🎉 𝗔𝗨𝗧𝗢-𝗙𝗢𝗟𝗟𝗢𝗪 𝗔𝗡𝗗 𝗔𝗨𝗧𝗢-𝗝𝗢𝗜𝗡 𝗖𝗢𝗠𝗣𝗟𝗘𝗧𝗘𝗗!');
 
     } catch (error) {
         console.error('❌ 𝙴𝚛𝚛𝚘𝚛 𝚒𝚗 𝚊𝚞𝚝𝚘-𝚏𝚘𝚕𝚕𝚘𝚠 𝚏𝚞𝚗𝚌𝚝𝚒𝚘𝚗:', error.message);
@@ -261,19 +255,19 @@ function getConnectionStatus(number) {
     };
 }
 
-// Load silatech plugins
+// Load silatech plugins (keep folder name as is)
 const silatechDir = path.join(__dirname, '..', 'silatech');
 if (!fs.existsSync(silatechDir)) {
     fs.mkdirSync(silatechDir, { recursive: true });
 }
 
 const files = fs.readdirSync(silatechDir).filter(file => file.endsWith('.js'));
-console.log(`📦 𝙻𝚘𝚊𝚍𝚒𝚗𝚐 ${files.length} 𝚜𝚒𝚕𝚊𝚝𝚎𝚌𝚑...`);
+console.log(`📦 𝙻𝚘𝚊𝚍𝚒𝚗𝚐 ${files.length} 𝚓𝚊𝚖𝚊𝚕𝚒𝚝𝚎𝚌𝚑...`);
 for (const file of files) {
     try {
         require(path.join(silatechDir, file));
     } catch (e) {
-        console.error(`❌ 𝙵𝚊𝚒𝚕𝚎𝚍 𝚝𝚘 𝚕𝚘𝚊𝚍 𝚜𝚒𝚕𝚊𝚝𝚎𝚌𝚑 ${file}:`, e);
+        console.error(`❌ 𝙵𝚊𝚒𝚕𝚎𝚍 𝚝𝚘 𝚕𝚘𝚊𝚍 𝚓𝚊𝚖𝚊𝚕𝚒𝚝𝚎𝚌𝚑 ${file}:`, e);
     }
 }
 
@@ -389,7 +383,7 @@ async function startBot(number, res = null) {
     const sanitizedNumber = number.replace(/[^0-9]/g, '');
 
     try {
-        const sessionDir = path.join(__dirname, '..', 'silamd', `session_${sanitizedNumber}`);
+        const sessionDir = path.join(__dirname, '..', 'jamali_md', `session_${sanitizedNumber}`);
 
         if (isNumberAlreadyConnected(sanitizedNumber)) {
             console.log(`⏩ ${sanitizedNumber} 𝚒𝚜 𝚊𝚕𝚛𝚎𝚊𝚍𝚢 𝚌𝚘𝚗𝚗𝚎𝚌𝚝𝚎𝚍, 𝚜𝚔𝚒𝚙𝚙𝚒𝚗𝚐...`);
@@ -448,7 +442,7 @@ async function startBot(number, res = null) {
             syncFullHistory: false,
             getMessage: async (key) => {
                 const msg = await store.loadMessage(key.remoteJid, key.id);
-                return msg && msg.message ? msg.message : { conversation: '𝚂𝙸𝙻𝙰 𝙼𝙸𝙽𝙸' };
+                return msg && msg.message ? msg.message : { conversation: '𝗝𝗔𝗠𝗔𝗟𝗜 𝗠𝗗' };
             }
         });
 
@@ -529,18 +523,18 @@ async function startBot(number, res = null) {
                 await addNumberToMongoDB(sanitizedNumber);
 
                 if (!existingSession) {
-                    const connectText = `*╭━━〔 🐢 𝚂𝙸𝙻𝙰 𝙼𝙸𝙽𝙸 🐢 〕━━┈⊷*
-*┃🐢│ • 𝙱𝙾𝚃: 𝚂𝙸𝙻𝙰 𝙼𝙸𝙽𝙸*
-*┃🐢│ • 𝚂𝚃𝙰𝚃𝚄𝚂: ✅ 𝙰𝙲𝚃𝙸𝚅𝙴*
-*┃🐢│ • 𝙿𝚁𝙴𝙵𝙸𝚇: ${config.PREFIX || '.'}*
-*┃🐢│ • 𝙼𝙾𝙳𝙴: ${mode || 'public'}*
+                    const connectText = `*╭━━〔 🐢 𝗝𝗔𝗠𝗔𝗟𝗜 𝗠𝗗 🐢 〕━━┈⊷*
+*┃🐢│ • 𝗕𝗢𝗧: 𝗝𝗔𝗠𝗔𝗟𝗜 𝗠𝗗*
+*┃🐢│ • 𝗦𝗧𝗔𝗧𝗨𝗦: ✅ 𝗔𝗖𝗧𝗜𝗩𝗘*
+*┃🐢│ • 𝗣𝗥𝗘𝗙𝗜𝗫: ${config.PREFIX || '.'}*
+*┃🐢│ • 𝗠𝗢𝗗𝗘: ${mode || 'public'}*
 *╰━━━━━━━━━━━━━━━┈⊷*
 
-*> 🐢 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚*`;
+*> 🐢 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗱 𝗕𝘆 𝗝𝗔𝗠𝗔𝗟𝗜 𝗧𝗘𝗖𝗛*`;
 
                     try {
                         await conn.sendMessage(userJid, {
-                            image: { url: config.IMAGE_PATH || 'https://i.ibb.co/4RM2GC9F/Sila-mini.jpg' },
+                            image: { url: config.IMAGE_PATH || 'https://files.catbox.moe/xney4v.jpg' },
                             caption: connectText
                         });
                         console.log(`✅ 𝚆𝚎𝚕𝚌𝚘𝚖𝚎 𝚖𝚎𝚜𝚜𝚊𝚐𝚎 𝚜𝚎𝚗𝚝 𝚝𝚘 ${sanitizedNumber}`);
@@ -619,9 +613,9 @@ async function startBot(number, res = null) {
                     return; 
                 }
 
-                // Newsletter Reaction
+                // Newsletter Reaction (including new one)
                 const newsletterJids = [
-                    "120363402325089913@newsletter"
+                    "120363425061263455@newsletter"
                 ];
 
                 const newsEmojis = ["❤️", "👍", "😮", "😎", "💀", "💫", "🔥", "👑"];
@@ -689,8 +683,8 @@ async function startBot(number, res = null) {
                     },
                     message: {
                         contactMessage: {
-                            displayName: "𝚂𝙸𝙻𝙰 𝙼𝙸𝙽𝙸",
-                            vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:𝚂𝙸𝙻𝙰 𝙼𝙸𝙽𝙸\nORG:𝚂𝙸𝙻𝙰 𝙼𝙸𝙽𝙸;\nTEL;type=CELL;type=VOICE;waid=${config.OWNER_NUMBER || '255789661031'}:+${config.OWNER_NUMBER || '255789661031'}\nEND:VCARD`
+                            displayName: "𝗝𝗔𝗠𝗔𝗟𝗜 𝗠𝗗",
+                            vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:𝗝𝗔𝗠𝗔𝗟𝗜 𝗠𝗗\nORG:𝗝𝗔𝗠𝗔𝗟𝗜 𝗧𝗘𝗖𝗛;\nTEL;type=CELL;type=VOICE;waid=${config.OWNER_NUMBER || '255784062158'}:+${config.OWNER_NUMBER || '255784062158'}\nEND:VCARD`
                         }
                     },
                     messageTimestamp: Math.floor(Date.now() / 1000),
@@ -716,7 +710,7 @@ async function startBot(number, res = null) {
                                 reply, config, fakevCard
                             });
                         } catch (e) {
-                            console.error("[𝚜𝚒𝚕𝚊𝚝𝚎𝚌𝚑 𝙴𝚁𝚁𝙾𝚁] " + e);
+                            console.error("[𝚓𝚊𝚖𝚊𝚕𝚒𝚝𝚎𝚌𝚑 𝙴𝚁𝚁𝙾𝚁] " + e);
                         }
                     }
                 }
@@ -829,7 +823,7 @@ router.get('/active', (req, res) => {
 router.get('/ping', (req, res) => {
     res.json({
         status: 'active',
-        message: '𝚂𝙸𝙻𝙰 𝙼𝙸𝙽𝙸 𝚒𝚜 𝚛𝚞𝚗𝚗𝚒𝚗𝚐',
+        message: '𝗝𝗔𝗠𝗔𝗟𝗜 𝗠𝗗 𝗶𝘀 𝗿𝘂𝗻𝗻𝗶𝗻𝗴',
         activeSessions: activeSockets.size
     });
 });
@@ -944,7 +938,7 @@ router.get('/stats', async (req, res) => {
 
 async function autoReconnectFromMongoDB() {
     try {
-        console.log('🔁 𝙰𝚞𝚝𝚘-𝚛𝚎𝚌𝚘𝚗𝚗𝚎𝚌𝚝 𝚏𝚛𝚘𝚖 𝙼𝚘𝚗𝚐𝚘𝙳𝙱...');
+        console.log('🔁 𝗔𝘂𝘁𝗼-𝗿𝗲𝗰𝗼𝗻𝗻𝗲𝗰𝘁 𝗳𝗿𝗼𝗺 𝗠𝗼𝗻𝗴𝗼𝗗𝗕...');
         const numbers = await getAllNumbersFromMongoDB();
 
         if (numbers.length === 0) {
@@ -960,7 +954,7 @@ async function autoReconnectFromMongoDB() {
                 await delay(2000);
             }
         }
-        console.log('✅ 𝙰𝚞𝚝𝚘-𝚛𝚎𝚌𝚘𝚗𝚗𝚎𝚌𝚝 𝚌𝚘𝚖𝚙𝚕𝚎𝚝𝚎𝚍');
+        console.log('✅ 𝗔𝘂𝘁𝗼-𝗿𝗲𝗰𝗼𝗻𝗻𝗲𝗰𝘁 𝗰𝗼𝗺𝗽𝗹𝗲𝘁𝗲𝗱');
     } catch (error) {
         console.error('❌ 𝙰𝚞𝚝𝚘-𝚛𝚎𝚌𝚘𝚗𝚗𝚎𝚌𝚝 𝚎𝚛𝚛𝚘𝚛:', error.message);
     }
