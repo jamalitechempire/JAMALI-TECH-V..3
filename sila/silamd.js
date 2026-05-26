@@ -1,4 +1,4 @@
-// silamd.js - Command Handler for 𝚂𝙸𝙻𝙰 𝙼𝙸𝙽𝙸
+// jamalimd.js - Command Handler for jamali 𝙼𝙸𝙽𝙸
 
 const { fontMap, convertToSilaFont } = require('./Sila/fonts');
 
