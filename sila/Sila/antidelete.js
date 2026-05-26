@@ -7,15 +7,16 @@
 // ║      ███████║██║███████╗██║  ██║   ██║ ╚═╝ ██║██████╔╝     ║
 // ║      ╚══════╝╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝     ╚═╝╚═════╝      ║
 // ║                                                              ║
-// ║         𝙰𝙽𝚃𝙸-𝙳𝙴𝙻𝙴𝚃𝙴 𝙷𝙰𝙽𝙳𝙻𝙴𝚁 - 𝚂𝙸𝙻𝙰 𝙼𝙸𝙽𝙸                ║
+// ║         𝗔𝗡𝗧𝗜-𝗗𝗘𝗟𝗘𝗧𝗘 𝗛𝗔𝗡𝗗𝗟𝗘𝗥 - 𝗝𝗔𝗠𝗔𝗟𝗜 𝗠𝗗                   ║
 // ║                                                              ║
-// ║         📦 GitHub: https://github.com/Sila-Md              ║
-// ║         📺 YouTube: https://youtube.com/@silatrix22        ║
-// ║         👨‍💻 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚                         ║
+// ║         📱 Follow 𝗝𝗔𝗠𝗔𝗟𝗜 𝗧𝗘𝗖𝗛 𝗘𝗠𝗣𝗜𝗥𝗘 on WhatsApp:        ║
+// ║         https://whatsapp.com/channel/0029VbC7AgJK5cD71vGIpO3h ║
+// ║                                                              ║
+// ║         👨‍💻 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 𝗝𝗔𝗠𝗔𝗟𝗜 𝗧𝗘𝗖𝗛                       ║
 // ║                                                              ║
 // ╚══════════════════════════════════════════════════════════════╝
 
-const { getAntideleteStatus } = require('../../silamd/antidelete'); // Path to silamd folder
+const { getAntideleteStatus } = require('../../jamali_md/antidelete'); // Path to jamali_md folder
 const config = require('../config');
 
 const handleAntidelete = async (conn, updates, store) => {
@@ -40,13 +41,13 @@ const handleAntidelete = async (conn, updates, store) => {
                 const msg = await store.loadMessage(chatId, messageId);
 
                 if (msg) {
-                    const alertText = `*╭━━〔 🐢 𝙰𝙽𝚃𝙸-𝙳𝙴𝙻𝙴𝚃𝙴 🐢 〕━━┈⊷*
+                    const alertText = `*╭━━〔 🐢 𝗔𝗡𝗧𝗜-𝗗𝗘𝗟𝗘𝗧𝗘 🐢 〕━━┈⊷*
 *┃🐢│ • 🚫 Message Deleted!*
 *┃🐢│ • 👤 User:* @${participant.split('@')[0]}
 *┃🐢│ • 📅 Date:* ${new Date().toLocaleString()}
 *╰━━━━━━━━━━━━━━━┈⊷*
 
-*> 🐢 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚*`;
+*> 🐢 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗱 𝗕𝘆 𝗝𝗔𝗠𝗔𝗟𝗜 𝗧𝗘𝗖𝗛*`;
                     
                     await conn.sendMessage(chatId, { text: alertText, mentions: [participant] });
                     await conn.sendMessage(chatId, { forward: msg, contextInfo: { isForwarded: false } }, { quoted: msg });
@@ -54,7 +55,7 @@ const handleAntidelete = async (conn, updates, store) => {
             }
         }
     } catch (e) { 
-        console.error("𝙰𝙽𝚃𝙸-𝙳𝙴𝙻𝙴𝚃𝙴 Error:", e); 
+        console.error("𝗔𝗡𝗧𝗜-𝗗𝗘𝗟𝗘𝗧𝗘 Error:", e); 
     }
 };
 
