@@ -1,9 +1,9 @@
 {
-  "name": "🗡️MOMY-KIDY MD🗡️",
+  "name": "🗡️JAMALI TECH  MD🗡️",
   "description": "SESSION ID GENERATOR FOR WHATSAPP BOTS",
-  "logo": "https://files.catbox.moe/natk49.jpg",
-  "repository": "https://github.com/mbwa-md/test-v2",
-  "keywords": ["MOMY-KIDY BOT"],
+  "logo": "https://files.catbox.moe/xney4v.jpg",
+  "repository": "https://github.com/JAMALI MD",
+  "keywords": ["JAMALI MD BOT"],
   "success_url": "/", 
   "buildpacks": [
     { "url": "https://github.com/heroku/heroku-buildpack-nodejs#latest" }
@@ -11,7 +11,7 @@
   "env": {      
     "MESSAGE": {
       "description": "Msg Attached With Session ID",
-      "value": "🔐 𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚 𝐓𝐞𝐜𝐡 🔐",
+      "value": "🔐 𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 JAMALI𝐓𝐞𝐜𝐡 🔐",
       "required": false 
     }
   }
