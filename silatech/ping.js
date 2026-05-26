@@ -1,6 +1,6 @@
-// silatech/general.js
-const { cmd } = require('../sila/silamd');  // Imebadilishwa
-const config = require('../sila/config');    // Imebadilishwa
+// jamalitech/general.js (au silatech/general.js - jina la folder unaweza kulibadilisha)
+const { cmd } = require('../jamali_md/jamalimd');   // Badala ya '../sila/silamd'
+const config = require('../jamali_md/config');     // Badala ya '../sila/config'
 
 // Commande Ping
 cmd({
@@ -12,19 +12,19 @@ cmd({
 async(conn, mek, m, { from, reply }) => {
     try {
         const sentMsg = await conn.sendMessage(from, { 
-            text: '*_⚡️ 𝙿𝙸𝙽𝙶𝙸𝙽𝙶 𝚃𝙾 𝚂𝙴𝚁𝚅𝙴𝚁..._*' 
+            text: '*_⚡️ 𝗣𝗜𝗡𝗚𝗜𝗡𝗚 𝗧𝗢 𝗦𝗘𝗥𝗩𝗘𝗥..._*' 
         }, { quoted: mek });
         
         const startTime = Date.now();
         const endTime = Date.now();
         const ping = endTime - startTime;
         
-        const pingMsg = `*╭━━〔 🐢 𝙿𝙸𝙽𝙶 🐢 〕━━┈⊷*
-*┃🐢│ • 🏓 𝙿𝙾𝙽𝙶!*
-*┃🐢│ • ⚡ 𝙻𝙰𝚃𝙴𝙽𝙲𝚈: ${ping}ms*
+        const pingMsg = `*╭━━〔 🐢 𝗣𝗜𝗡𝗚 🐢 〕━━┈⊷*
+*┃🐢│ • 🏓 𝗣𝗢𝗡𝗚!*
+*┃🐢│ • ⚡ 𝗟𝗔𝗧𝗘𝗡𝗖𝗬: ${ping}ms*
 *╰━━━━━━━━━━━━━━━┈⊷*
 
-*> 🐢 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚*`;
+*> 🐢 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗱 𝗕𝘆 𝗝𝗔𝗠𝗔𝗟𝗜 𝗧𝗘𝗖𝗛*`;
         
         await conn.sendMessage(from, { 
             text: pingMsg, 
@@ -51,17 +51,17 @@ async(conn, mek, m, { from, reply }) => {
         const minutes = Math.floor((uptime % 3600) / 60);
         const seconds = Math.floor(uptime % 60);
         
-        const aliveMsg = `*╭━━〔 🐢 𝙰𝙻𝙸𝚅𝙴 🐢 〕━━┈⊷*
-*┃🐢│ • 𝙱𝙾𝚃: 𝚂𝙸𝙻𝙰 𝙼𝙸𝙽𝙸*
-*┃🐢│ • 𝚂𝚃𝙰𝚃𝚄𝚂: ✅ 𝙰𝙲𝚃𝙸𝚅𝙴*
-*┃🐢│ • 𝙿𝚁𝙴𝙵𝙸𝚇: ${config.PREFIX || '.'}*
-*┃🐢│ • 𝚁𝚄𝙽𝚃𝙸𝙼𝙴: ${hours}h ${minutes}m ${seconds}s*
+        const aliveMsg = `*╭━━〔 🐢 𝗔𝗟𝗜𝗩𝗘 🐢 〕━━┈⊷*
+*┃🐢│ • 𝗕𝗢𝗧: 𝗝𝗔𝗠𝗔𝗟𝗜 𝗠𝗗*
+*┃🐢│ • 𝗦𝗧𝗔𝗧𝗨𝗦: ✅ 𝗔𝗖𝗧𝗜𝗩𝗘*
+*┃🐢│ • 𝗣𝗥𝗘𝗙𝗜𝗫: ${config.PREFIX || '.'}*
+*┃🐢│ • 𝗥𝗨𝗡𝗧𝗜𝗠𝗘: ${hours}h ${minutes}m ${seconds}s*
 *╰━━━━━━━━━━━━━━━┈⊷*
 
-*> 🐢 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚*`;
+*> 🐢 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗱 𝗕𝘆 𝗝𝗔𝗠𝗔𝗟𝗜 𝗧𝗘𝗖𝗛*`;
 
         await conn.sendMessage(from, { 
-            image: { url: config.IMAGE_PATH || 'https://i.ibb.co/4RM2GC9F/Sila-mini.jpg' },
+            image: { url: config.IMAGE_PATH || 'https://i.ibb.co/4RM2GC9F/Sila-mini.jpg' },  // Unaweza kubadilisha URL ya picha baadaye
             caption: aliveMsg
         }, { quoted: mek });
         
