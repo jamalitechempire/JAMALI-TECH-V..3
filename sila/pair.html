@@ -3,233 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝚂𝙸𝙻𝙰 𝙼𝙸𝙽𝙸 - PAIRING</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500&display=swap" rel="stylesheet">
+    <title>JAMALI MD ─ PAIRING PORTAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #00f3ff;
-            --secondary: #bc13fe;
-            --bg: #050505;
-            --glass: rgba(255, 255, 255, 0.05);
-        }
-
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            background-color: var(--bg);
-            font-family: 'Rajdhani', sans-serif;
-            color: #fff;
+            background: radial-gradient(circle at 20% 30%, #0a0a0a, #000000);
+            font-family: 'Space Mono', monospace;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
             position: relative;
+            overflow-x: hidden;
         }
 
-        /* Background Grid Animation */
-        body::before {
-            content: '';
+        /* animated glitch background */
+        .glitch-bg {
             position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: 
-                linear-gradient(rgba(0, 243, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 243, 255, 0.1) 1px, transparent 1px);
-            background-size: 40px 40px;
-            animation: gridMove 20s linear infinite;
-            z-index: -2;
-            opacity: 0.3;
-        }
-
-        /* ASCII Art Background */
-        body::after {
-            content: "███████╗██╗██╗      █████╗    ███╗   ███╗██╗███╗   ██╗██╗";
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            font-family: monospace;
-            font-size: 8px;
-            color: rgba(0, 243, 255, 0.05);
-            white-space: pre;
-            z-index: -1;
-        }
-
-        @keyframes gridMove {
-            0% { background-position: 0 0; }
-            100% { background-position: 0 400px; }
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 255, 255, 0.03) 0px,
+                rgba(0, 255, 255, 0.03) 2px,
+                transparent 2px,
+                transparent 6px
+            );
+            pointer-events: none;
+            z-index: 0;
         }
 
         .container {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 243, 255, 0.3);
-            padding: 2rem;
-            border-radius: 0px;
-            width: 90%;
-            max-width: 450px;
-            text-align: center;
-            box-shadow: 0 0 30px rgba(0, 243, 255, 0.1);
             position: relative;
-            clip-path: polygon(
-                10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%
-            );
+            z-index: 2;
+            width: 90%;
+            max-width: 520px;
+            background: rgba(10, 20, 30, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 255, 0.4);
+            border-radius: 28px;
+            padding: 2rem 1.8rem;
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.2), inset 0 0 20px rgba(0, 255, 255, 0.05);
+            transition: all 0.3s ease;
         }
 
-        /* Corner Decorations */
-        .corner {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--primary);
-            transition: 0.3s;
-        }
-        .tl { top: 0; left: 0; border-right: none; border-bottom: none; }
-        .tr { top: 0; right: 0; border-left: none; border-bottom: none; }
-        .bl { bottom: 0; left: 0; border-right: none; border-top: none; }
-        .br { bottom: 0; right: 0; border-left: none; border-top: none; }
-
-        /* ASCII Header */
-        .ascii {
-            font-family: monospace;
-            font-size: 8px;
-            color: var(--primary);
-            margin-bottom: 15px;
-            line-height: 1.2;
-            white-space: pre;
+        /* ASCII art style */
+        .jamali-ascii {
+            font-family: 'Courier New', monospace;
+            font-size: 0.5rem;
+            color: #0ff;
+            text-shadow: 0 0 5px #0ff;
             text-align: center;
+            white-space: pre;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            line-height: 1.2;
         }
 
         h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            color: var(--primary);
-            text-shadow: 0 0 10px var(--primary);
-            margin-bottom: 5px;
+            font-size: 2.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, #0ff, #f0f);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 8px rgba(0,255,255,0.5);
+            letter-spacing: 3px;
+            margin-bottom: 0.25rem;
+        }
+
+        .sub {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #8af;
             letter-spacing: 2px;
+            margin-bottom: 1.8rem;
+            border-bottom: 1px dashed rgba(0,255,255,0.3);
+            display: inline-block;
+            width: auto;
+            padding-bottom: 6px;
         }
 
-        .status-line {
-            color: #aaa;
-            font-size: 0.8rem;
-            margin-bottom: 20px;
+        .input-field {
+            margin: 1.5rem 0;
+        }
+
+        .input-field label {
+            display: block;
+            font-size: 0.7rem;
+            color: #0ff;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .input-group {
-            position: relative;
-            margin-bottom: 20px;
         }
 
         input {
             width: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid #333;
-            border-bottom: 2px solid var(--primary);
-            color: var(--primary);
-            padding: 12px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            border: none;
+            border-bottom: 2px solid #0ff;
+            padding: 14px 12px;
+            font-family: 'Space Mono', monospace;
+            font-size: 1.2rem;
+            color: #0ff;
             text-align: center;
             outline: none;
-            transition: 0.3s;
+            transition: 0.2s;
+            border-radius: 0;
+            letter-spacing: 1px;
         }
 
         input:focus {
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
-            background: rgba(0, 243, 255, 0.05);
+            border-bottom-color: #f0f;
+            box-shadow: 0 5px 15px rgba(0,255,255,0.2);
+            background: rgba(0, 30, 40, 0.8);
         }
 
-        input::placeholder {
-            color: rgba(0, 243, 255, 0.3);
-            font-size: 0.8rem;
-        }
-
-        button {
+        .glow-btn {
             width: 100%;
-            padding: 12px;
-            background: transparent;
-            color: var(--primary);
-            border: 1px solid var(--primary);
+            background: linear-gradient(90deg, #0ff, #f0f);
+            border: none;
+            padding: 14px;
             font-family: 'Orbitron', sans-serif;
             font-weight: bold;
-            font-size: 0.9rem;
-            cursor: pointer;
+            font-size: 1rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        button::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--primary);
-            transition: 0.3s;
-            z-index: -1;
-        }
-
-        button:hover {
+            letter-spacing: 3px;
             color: #000;
-            box-shadow: 0 0 20px var(--primary);
+            cursor: pointer;
+            position: relative;
+            transition: 0.2s;
+            border-radius: 40px;
+            margin-top: 10px;
+            box-shadow: 0 0 12px rgba(0,255,255,0.6);
         }
 
-        button:hover::before {
-            left: 0;
+        .glow-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 25px cyan;
+            letter-spacing: 5px;
         }
 
         #result {
-            margin-top: 20px;
-            min-height: 50px;
+            margin: 25px 0 15px;
+            min-height: 90px;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
         }
 
-        .code-display {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            color: var(--secondary);
-            text-shadow: 0 0 15px var(--secondary);
-            letter-spacing: 5px;
-            border: 1px dashed var(--secondary);
-            padding: 8px 15px;
-            margin-top: 10px;
+        .code-card {
+            background: #000000aa;
+            border: 1px solid #0ff;
+            padding: 12px 20px;
+            font-family: 'Orbitron', monospace;
+            font-size: 2rem;
+            letter-spacing: 6px;
+            color: #0ff;
+            text-shadow: 0 0 6px cyan;
             cursor: pointer;
-            position: relative;
-        }
-        
-        .code-display:active {
-            transform: scale(0.98);
+            border-radius: 16px;
+            backdrop-filter: blur(4px);
+            transition: 0.1s linear;
+            text-align: center;
         }
 
-        .code-display::after {
-            content: 'CLICK TO COPY';
-            position: absolute;
-            bottom: -18px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.5rem;
-            color: #fff;
-            font-family: 'Rajdhani', sans-serif;
-            opacity: 0.7;
+        .code-card:active {
+            transform: scale(0.96);
+        }
+
+        .copy-tip {
+            font-size: 0.6rem;
+            margin-top: 8px;
+            color: #aaa;
+            text-align: center;
         }
 
         .loader {
-            border: 3px solid rgba(255,255,255,0.1);
-            border-top: 3px solid var(--primary);
+            width: 45px;
+            height: 45px;
+            border: 3px solid rgba(0,255,255,0.2);
+            border-top: 3px solid #0ff;
             border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 1s linear infinite;
+            animation: spin 0.9s linear infinite;
         }
 
         @keyframes spin {
@@ -237,126 +203,161 @@
             100% { transform: rotate(360deg); }
         }
 
+        .status-badge {
+            background: #0f02;
+            border-left: 4px solid #0ff;
+            padding: 8px 12px;
+            font-size: 0.7rem;
+            color: #0ff;
+        }
+
         .social-links {
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(0, 243, 255, 0.2);
+            margin-top: 25px;
+            text-align: center;
+            border-top: 1px solid rgba(0,255,255,0.2);
+            padding-top: 18px;
             font-size: 0.7rem;
         }
 
         .social-links a {
-            color: var(--primary);
+            color: #0ff;
             text-decoration: none;
             margin: 0 8px;
-            transition: 0.3s;
+            transition: 0.2s;
         }
 
         .social-links a:hover {
-            text-shadow: 0 0 8px var(--primary);
+            text-shadow: 0 0 6px cyan;
+            color: #fff;
         }
 
         footer {
-            margin-top: 15px;
-            font-size: 0.7rem;
-            color: rgba(255,255,255,0.3);
+            margin-top: 18px;
+            text-align: center;
+            font-size: 0.65rem;
+            color: #6af;
         }
 
-        .footer-dev {
-            color: var(--secondary);
+        .jamali-badge {
             font-weight: bold;
+            background: linear-gradient(45deg, cyan, magenta);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        @media (max-width: 500px) {
+            .container { padding: 1.5rem; }
+            h1 { font-size: 1.8rem; }
+            .code-card { font-size: 1.5rem; letter-spacing: 3px; }
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <!-- Corner Decorations -->
-        <div class="corner tl"></div>
-        <div class="corner tr"></div>
-        <div class="corner bl"></div>
-        <div class="corner br"></div>
-
-        <div class="ascii">
-██╗██╗      █████╗     ███╗   ███╗██╗███╗   ██╗██╗
-██║██║     ██╔══██╗    ████╗ ████║██║████╗  ██║██║
-██║██║     ███████║    ██╔████╔██║██║██╔██╗ ██║██║
-██║██║     ██╔══██║    ██║╚██╔╝██║██║██║╚██╗██║██║
-██║███████╗██║  ██║    ██║ ╚═╝ ██║██║██║ ╚████║██║
-╚═╝╚══════╝╚═╝  ╚═╝    ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝
-        </div>
-
-        <h1>𝚂𝙸𝙻𝙰 𝙼𝙸𝙽𝙸</h1>
-        <div class="status-line">System Status: <span style="color:var(--primary)">ONLINE</span></div>
-
-        <div class="input-group">
-            <input type="text" id="number" placeholder="ENTER NUMBER (e.g. 2557...)" autocomplete="off">
-        </div>
-
-        <button onclick="getCode()">⚡ GENERATE CODE ⚡</button>
-
-        <div id="result"></div>
-
-        <div class="social-links">
-            🔗 
-            <a href="https://github.com/Sila-Md" target="_blank">GitHub</a> • 
-            <a href="https://youtube.com/@silatrix22" target="_blank">YouTube</a> • 
-            <a href="https://whatsapp.com/channel/0029VbBG4gfISTkCpKxyMH02" target="_blank">Channel</a>
-        </div>
-
-        <footer>
-            ⚡ <span class="footer-dev">𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚</span> ⚡
-        </footer>
+<div class="glitch-bg"></div>
+<div class="container">
+    <!-- ASCII art ya JAMALI MD (simplified stylish) -->
+    <div class="jamali-ascii">
+   ▄█   ▄█▄    ▄████████ ███▄▄▄▄   ▄█      ███      ▄█   ▄█          ▄████████ 
+  ███ ▄███▀   ███    ███ ███▀▀▀██▄ ███  ▀█████████▄ ███  ███         ███    ███ 
+  ███▐██▀     ███    █▀  ███   ███ ███▌   ▀███▀▀██ ███▌ ███▌        ███    █▀  
+ ▄█████▀     ▄███▄▄▄     ███   ███ ███▌    ███   ▀ ███▌ ███▌       ▄███▄▄▄     
+▀▀█████▄    ▀▀███▀▀▀     ███   ███ ███▌    ███     ███▌ ███▌      ▀▀███▀▀▀     
+  ███▐██▄     ███        ███   ███ ███     ███     ███  ███         ███    █▄  
+  ███ ▀███▄   ███        ███   ███ ███     ███     ███  ███         ███    ███ 
+  ███   ▀█▀   ███         ▀█   █▀  █▀     ▄████▀   █▀   █▀          ██████████ 
     </div>
 
-    <script>
-        async function getCode() {
-            const numberInput = document.getElementById("number");
-            const resDiv = document.getElementById("result");
-            const num = numberInput.value.replace(/[^0-9]/g, '');
+    <h1>JAMALI MD</h1>
+    <div style="text-align: center; margin-bottom: 0.5rem;">
+        <span class="sub">⚡ PAIRING PROTOCOL v2.0 ⚡</span>
+    </div>
 
-            if (!num) {
-                resDiv.innerHTML = "<span style='color:#ff0055; text-shadow:0 0 10px #ff0055'>[ERROR] INPUT REQUIRED</span>";
-                numberInput.style.borderColor = "#ff0055";
-                return;
-            }
+    <div class="input-field">
+        <label>📱 WhatsApp Number (with country code)</label>
+        <input type="text" id="number" placeholder="e.g., 255784062158" autocomplete="off">
+    </div>
 
-            numberInput.style.borderColor = "#00f3ff";
-            resDiv.innerHTML = '<div class="loader"></div><span style="margin-top:10px; font-size:0.7rem; letter-spacing:2px">ESTABLISHING HANDSHAKE...</span>';
+    <button class="glow-btn" onclick="requestPairing()">⟁ INITIATE PAIRING ⟁</button>
 
-            try {
-                const req = await fetch(`/code?number=${num}`);
-                const data = await req.json();
+    <div id="result"></div>
 
-                if (data.code) {
-                    resDiv.innerHTML = `
-                        <div style="font-size:0.7rem; color:#aaa">PAIRING CODE:</div>
-                        <div class="code-display" onclick="copyCode('${data.code}')">${data.code}</div>
-                    `;
-                } else if (data.status === 'already_connected') {
-                    resDiv.innerHTML = "<span style='color:#0f0; text-shadow:0 0 10px #0f0'>✓ ALREADY CONNECTED</span>";
-                } else {
-                    resDiv.innerHTML = "<span style='color:#ff0055'>[ERROR] CONNECTION FAILED</span>";
-                }
-            } catch (e) {
-                resDiv.innerHTML = "<span style='color:#ff0055'>[ERROR] SERVER UNREACHABLE</span>";
-            }
+    <div class="social-links">
+        🔗 <strong>𝗝𝗔𝗠𝗔𝗟𝗜 𝗧𝗘𝗖𝗛 𝗘𝗠𝗣𝗜𝗥𝗘</strong> &nbsp;|&nbsp;
+        <a href="https://whatsapp.com/channel/0029VbC7AgJK5cD71vGIpO3h" target="_blank">📢 WhatsApp Channel</a>
+    </div>
+
+    <footer>
+        ⚡ 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 <span class="jamali-badge">𝗝𝗔𝗠𝗔𝗟𝗜 𝗧𝗘𝗖𝗛</span> ⚡
+    </footer>
+</div>
+
+<script>
+    async function requestPairing() {
+        const inputEl = document.getElementById('number');
+        const resultDiv = document.getElementById('result');
+        let rawNumber = inputEl.value.trim();
+
+        if (!rawNumber) {
+            resultDiv.innerHTML = '<div class="status-badge" style="border-left-color:#f33;">❌ ERROR: ENTER YOUR NUMBER</div>';
+            inputEl.style.borderBottomColor = "#f33";
+            return;
         }
 
-        function copyCode(code) {
-            navigator.clipboard.writeText(code);
-            const display = document.querySelector('.code-display');
-            const originalText = display.innerText;
-            
-            display.innerText = "✓ COPIED ✓";
-            display.style.borderColor = "#0f0";
-            display.style.color = "#0f0";
-            
+        // sanitize: keep only digits
+        let cleanNum = rawNumber.replace(/[^0-9]/g, '');
+        if (!cleanNum.startsWith('255') && !cleanNum.startsWith('1') && !cleanNum.startsWith('62')) {
+            // just a warning but we'll proceed anyway
+        }
+        
+        inputEl.style.borderBottomColor = "#0ff";
+        resultDiv.innerHTML = '<div class="loader"></div><div style="margin-top:12px;font-size:0.7rem;">🔗 CONNECTING TO PAIR SERVER ...</div>';
+
+        try {
+            const response = await fetch(`/code?number=${cleanNum}`);
+            const data = await response.json();
+
+            if (data.code) {
+                resultDiv.innerHTML = `
+                    <div class="code-card" onclick="copyCode('${data.code}')">
+                        ${data.code}
+                    </div>
+                    <div class="copy-tip">✨ click code to copy ✨</div>
+                    <div style="font-size:0.65rem; margin-top:8px;">✅ Enter this code in WhatsApp Linked Devices</div>
+                `;
+            } 
+            else if (data.status === 'already_connected') {
+                resultDiv.innerHTML = '<div class="status-badge" style="border-left-color:#0f0;">✔️ NUMBER ALREADY ACTIVE & CONNECTED</div>';
+            }
+            else if (data.status === 'reconnecting') {
+                resultDiv.innerHTML = '<div class="status-badge" style="border-left-color:#fa0;">🔄 RECONNECTING WITH EXISTING SESSION ...</div>';
+            }
+            else {
+                resultDiv.innerHTML = '<div class="status-badge" style="border-left-color:#f66;">⚠️ PAIRING FAILED. CHECK NUMBER OR TRY AGAIN.</div>';
+            }
+        } catch (err) {
+            console.error(err);
+            resultDiv.innerHTML = '<div class="status-badge" style="border-left-color:#f66;">💀 SERVER OFFLINE | CONTACT OWNER</div>';
+        }
+    }
+
+    function copyCode(code) {
+        navigator.clipboard.writeText(code);
+        const codeDiv = document.querySelector('.code-card');
+        if (codeDiv) {
+            const original = codeDiv.innerText;
+            codeDiv.innerText = '✓ COPIED ✓';
+            codeDiv.style.color = '#0f0';
+            codeDiv.style.borderColor = '#0f0';
             setTimeout(() => {
-                display.innerText = originalText;
-                display.style.borderColor = "var(--secondary)";
-                display.style.color = "var(--secondary)";
-            }, 1500);
+                codeDiv.innerText = original;
+                codeDiv.style.color = '#0ff';
+                codeDiv.style.borderColor = '#0ff';
+            }, 1200);
+        } else {
+            alert('Code copied: ' + code);
         }
-    </script>
+    }
+</script>
 </body>
 </html>
