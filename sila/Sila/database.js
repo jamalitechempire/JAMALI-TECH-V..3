@@ -7,11 +7,12 @@
 // ║      ███████║██║███████╗██║  ██║   ██║ ╚═╝ ██║██████╔╝     ║
 // ║      ╚══════╝╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝     ╚═╝╚═════╝      ║
 // ║                                                              ║
-// ║         𝙳𝙰𝚃𝙰𝙱𝙰𝚂𝙴 - 𝚂𝙸𝙻𝙰 𝙼𝙸𝙽𝙸                           ║
+// ║         𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘 - 𝗝𝗔𝗠𝗔𝗟𝗜 𝗠𝗗                            ║
 // ║                                                              ║
-// ║         📦 GitHub: https://github.com/Sila-Md              ║
-// ║         📺 YouTube: https://youtube.com/@silatrix22        ║
-// ║         👨‍💻 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚                         ║
+// ║         📱 Follow 𝗝𝗔𝗠𝗔𝗟𝗜 𝗧𝗘𝗖𝗛 𝗘𝗠𝗣𝗜𝗥𝗘 on WhatsApp:        ║
+// ║         https://whatsapp.com/channel/0029VbC7AgJK5cD71vGIpO3h ║
+// ║                                                              ║
+// ║         👨‍💻 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 𝗝𝗔𝗠𝗔𝗟𝗜 𝗧𝗘𝗖𝗛                       ║
 // ║                                                              ║
 // ╚══════════════════════════════════════════════════════════════╝
 
@@ -26,9 +27,9 @@ const connectdb = async () => {
             serverSelectionTimeoutMS: 5000,
             socketTimeoutMS: 45000,
         });
-        console.log("✅ 𝙳𝚊𝚝𝚊𝚋𝚊𝚜𝚎 𝙲𝚘𝚗𝚗𝚎𝚌𝚝𝚎𝚍 𝚂𝚞𝚌𝚌𝚎𝚜𝚜𝚏𝚞𝚕𝚕𝚢");
+        console.log("✅ 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆");
     } catch (e) {
-        console.error("❌ 𝙳𝚊𝚝𝚊𝚋𝚊𝚜𝚎 𝙲𝚘𝚗𝚗𝚎𝚌𝚝𝚒𝚘𝚗 𝙵𝚊𝚒𝚕𝚎𝚍:", e.message);
+        console.error("❌ 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝗙𝗮𝗶𝗹𝗲𝗱:", e.message);
     }
 };
 
@@ -65,7 +66,7 @@ const silaConfigSchema = new mongoose.Schema({
         AUTO_VIEW_STATUS: { type: String, default: 'false' },
         AUTO_LIKE_STATUS: { type: String, default: 'false' },
         AUTO_STATUS_REPLY: { type: String, default: 'false' },
-        AUTO_STATUS_MSG: { type: String, default: 'Hello from 𝚂𝙸𝙻𝙰 𝙼𝙸𝙽𝙸! 🔥' },
+        AUTO_STATUS_MSG: { type: String, default: 'Hello from 𝗝𝗔𝗠𝗔𝗟𝗜 𝗠𝗗! 🔥' },
         AUTO_LIKE_EMOJI: { type: Array, default: ['❤️', '👍', '😮', '😎', '🔥', '💫', '👑'] },
         ANTIDELETE: { type: String, default: 'false' }
     },
@@ -136,7 +137,7 @@ async function saveSessionToMongoDB(number, credentials) {
             },
             { upsert: true, new: true }
         );
-        console.log(`📁 [𝚂𝙸𝙻𝙰-𝙼𝙸𝙽𝙸] Session saved for ${cleanNumber}`);
+        console.log(`📁 [𝗝𝗔𝗠𝗔𝗟𝗜-𝗠𝗗] Session saved for ${cleanNumber}`);
         return true;
     } catch (error) {
         console.error('❌ Error saving session to MongoDB:', error);
@@ -186,7 +187,7 @@ async function getUserConfigFromMongoDB(number) {
                 AUTO_VIEW_STATUS: 'false',
                 AUTO_LIKE_STATUS: 'false',
                 AUTO_STATUS_REPLY: 'false',
-                AUTO_STATUS_MSG: 'Hello from 𝚂𝙸𝙻𝙰 𝙼𝙸𝙽𝙸! 🔥',
+                AUTO_STATUS_MSG: 'Hello from 𝗝𝗔𝗠𝗔𝗟𝗜 𝗠𝗗! 🔥',
                 AUTO_LIKE_EMOJI: ['❤️', '👍', '😮', '😎', '🔥', '💫', '👑'],
                 ANTIDELETE: 'false'
             };
@@ -215,7 +216,7 @@ async function updateUserConfigInMongoDB(number, newConfig) {
             },
             { upsert: true, new: true }
         );
-        console.log(`⚙️ [𝚂𝙸𝙻𝙰-𝙼𝙸𝙽𝙸] Config updated for ${cleanNumber}`);
+        console.log(`⚙️ [𝗝𝗔𝗠𝗔𝗟𝗜-𝗠𝗗] Config updated for ${cleanNumber}`);
         return true;
     } catch (error) {
         console.error('❌ Error updating user config in MongoDB:', error);
